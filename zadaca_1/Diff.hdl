@@ -1,0 +1,38 @@
+CHIP Diff {
+	IN a[16], b[16];
+	OUT out[16];
+	
+	PARTS:
+	Xor(a = a[0], b = b[0], out = c0);
+	Xor(a = a[1], b = b[1], out = c1);
+	Xor(a = a[2], b = b[2], out = c2);
+	Xor(a = a[3], b = b[3], out = c3);
+	Xor(a = a[4], b = b[4], out = c4);
+	Xor(a = a[5], b = b[5], out = c5);
+	Xor(a = a[6], b = b[6], out = c6);
+	Xor(a = a[7], b = b[7], out = c7);
+	Xor(a = a[8], b = b[8], out = c8);
+	Xor(a = a[9], b = b[9], out = c9);
+	Xor(a = a[10], b = b[10], out = c10);
+	Xor(a = a[11], b = b[11], out = c11);
+	Xor(a = a[12], b = b[12], out = c12);
+	Xor(a = a[13], b = b[13], out = c13);
+	Xor(a = a[14], b = b[14], out = c14);
+	Xor(a = a[15], b = b[15], out = c15);
+	
+	Add16(a[0] = c0, b[0] = c1, out = sum1);
+	Add16(a = sum1, b[0] = c2, out = sum2);
+	Add16(a = sum2, b[0] = c3, out = sum3);
+	Add16(a = sum3, b[0] = c4, out = sum4);
+	Add16(a = sum4, b[0] = c5, out = sum5);
+	Add16(a = sum5, b[0] = c6, out = sum6);
+	Add16(a = sum6, b[0] = c7, out = sum7);
+	Add16(a = sum7, b[0] = c8, out = sum8);
+	Add16(a = sum8, b[0] = c9, out = sum9);
+	Add16(a = sum9, b[0] = c10, out = sum10);
+	Add16(a = sum10, b[0] = c11, out = sum11);
+	Add16(a = sum11, b[0] = c12, out = sum12);
+	Add16(a = sum12, b[0] = c13, out = sum13);
+	Add16(a = sum13, b[0] = c14, out = sum14);
+	Add16(a = sum14, b[0] = c15, out = out);
+}
