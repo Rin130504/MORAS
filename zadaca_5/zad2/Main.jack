@@ -1,0 +1,17 @@
+class Main {
+    function void main() {
+        var vint v;
+        
+        let v = vint.new(5);
+
+        do v.set(0, 10);
+        do v.set(1, 20);
+        do v.set(2, 30);
+        do v.set(3, 40);
+        do v.set(4, 50);
+
+        do v.printVec();
+
+        return;
+    }
+}
