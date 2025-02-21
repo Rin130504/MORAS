@@ -1,0 +1,19 @@
+function Main.main 0
+call Output.printString 1
+push constant 0
+call Output.printString 1
+call Output.printString 1
+push constant 82
+call Output.printChar 1
+push constant 32
+call Output.printChar 1
+push constant 80
+call Output.printChar 1
+push constant 32
+call Output.printChar 1
+push constant 83
+call Output.printChar 1
+call Output.println 0
+call Keyboard.readInt 0
+call RockPaperScissors.play 1
+return

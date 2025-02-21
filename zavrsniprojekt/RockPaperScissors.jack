@@ -1,0 +1,36 @@
+class RockPaperScissors {
+    field int playerChoice, computerChoice;
+    field Array choices;
+    
+    function void new() {
+let choices = Array.new(3);
+        do choices.set(0, "Rock");
+        do choices.set(1, "Paper");
+        do choices.set(2, "Scissors");
+        return;
+    }
+    
+    function void play(int choice) {
+        let playerChoice = choice;
+        let computerChoice = Math.random(3);
+        
+        do Output.printString("Player chose: ");
+        do Output.printString(choices[playerChoice]);
+        do Output.printString("\nComputer chose: ");
+        do Output.printString(choices[computerChoice]);
+        do Output.printString("\n");
+        
+        if (playerChoice = computerChoice) {
+            do Output.printString("It's a tie!\n");
+        } else {
+            if ((playerChoice = 0 & computerChoice = 2) |
+                (playerChoice = 1 & computerChoice = 0) |
+                (playerChoice = 2 & computerChoice = 1)) {
+                do Output.printString("Player wins!\n");
+            } else {
+                do Output.printString("Computer wins!\n");
+            }
+        }
+        return;
+    }
+}

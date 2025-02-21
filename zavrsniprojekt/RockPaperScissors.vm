@@ -1,0 +1,62 @@
+function RockPaperScissors.new 0
+push constant 3
+call Array.new 1
+pop static 0
+push constant 0
+push constant 82
+call Array.set 2
+push constant 1
+push constant 80
+call Array.set 2
+push constant 2
+push constant 83
+call Array.set 2
+push constant 0
+return
+function RockPaperScissors.play 0
+push argument 0
+pop static 1
+call Math.random 1
+pop static 2
+push static 1
+push static 2
+eq
+if-goto TIE
+push static 1
+push constant 0
+eq
+push static 2
+push constant 2
+eq
+and
+if-goto PLAYER_WINS
+push static 1
+push constant 1
+eq
+push static 2
+push constant 0
+eq
+and
+if-goto PLAYER_WINS
+push static 1
+push constant 2
+eq
+push static 2
+push constant 1
+eq
+and
+if-goto PLAYER_WINS
+goto COMPUTER_WINS
+label TIE
+push constant 84
+call Output.printChar 1
+goto END
+label PLAYER_WINS
+push constant 87
+call Output.printChar 1
+goto END    
+label COMPUTER_WINS
+push constant 76
+call Output.printChar 1    
+label END
+return
